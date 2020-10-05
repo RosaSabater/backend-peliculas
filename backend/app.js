@@ -1,11 +1,6 @@
 const express = require('express');
 const app = express();
 
-const conn = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    database: 'dbPeliculas',
-})
 
 app.listen(3000,()=>console.log('Servidor levantado en 3000'));
 
