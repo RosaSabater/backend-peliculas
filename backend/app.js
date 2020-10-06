@@ -1,14 +1,18 @@
 const express = require('express');
+const login = require('./controllers/login');
+const registro = require('./controllers/registro');
 const app = express();
 
+
+app.use(express.json());
 
 app.listen(3000,()=>console.log('Servidor levantado en 3000'));
 
 app.get('/',(req, res)=> res.send('Nitflix frontpage'));
 
-app.get('/login', (req, res) => res.send('Login')); //iniciar sesion
+app.post('/login', login); //iniciar sesion
 
-app.get('/registro', (req, res) => res.send('Registro')); //registrar nueva cuenta
+app.post('/registro', registro); //registrar nueva cuenta
 
 app.get('/logout', (req, res) => res.send('Logout')); //cerrar sesión
 
