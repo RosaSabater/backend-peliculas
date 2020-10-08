@@ -8,17 +8,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
-      },
-      price: {
-        type: Sequelize.FLOAT
+      original_title: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
       description: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
+        allowNull: false
       },
-      duration: {
-        type: Sequelize.INTEGER
+      backdrop_path: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
       CategoryId: {
         type: Sequelize.INTEGER

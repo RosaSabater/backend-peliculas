@@ -8,15 +8,12 @@ app.use(express.json());
 
 app.listen(3000,()=>console.log('Servidor levantado en 3000'));
 
-app.get('/',(req, res)=> res.send('Nitflix frontpage'));
+app.use('/usuarios', usuariosRouter);
 
-app.post('/login', login); //iniciar sesion
 
-app.post('/registro', registro); //registrar nueva cuenta
 
-app.get('/logout', (req, res) => res.send('Logout')); //cerrar sesión
 
-app.get('/perfil', (req, res) => res.send('Perfil')); //perfil de la cuenta con info y peliculas alquiladas
+
 
 //esto es para evitar el error de CORS
 app.use(function(req, res, next) {
