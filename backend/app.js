@@ -1,18 +1,6 @@
 const express = require('express');
-const login = require('./controllers/login');
-const registro = require('./controllers/registro');
+const usuariosRouter = require('./routes/usuarios')
 const app = express();
-
-
-app.use(express.json());
-
-app.listen(3000,()=>console.log('Servidor levantado en 3000'));
-
-app.use('/usuarios', usuariosRouter);
-
-
-
-
 
 
 //esto es para evitar el error de CORS
@@ -22,4 +10,15 @@ app.use(function(req, res, next) {
     // res.header("Access-Control-Allow-Methods", "GET, POST");
     next();
 });
+
+app.use(express.json());
+
+
+app.use('/usuarios', usuariosRouter);
+
+
+app.listen(3000,()=>console.log('Servidor levantado en 3000'));
+
+
+
 

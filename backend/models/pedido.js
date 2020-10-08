@@ -15,9 +15,17 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Pedido.init({
-    estado: DataTypes.STRING,
-    returnDate: DataTypes.DATE,
-    UserId: DataTypes.INTEGER
+    estado: {
+      type: DataTypes.ENUM('alquilada', 'enviado', 'entregado')
+    },
+    returnDate: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    UserId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Pedido',

@@ -2,20 +2,39 @@ GET http://localhost:3000/
 
 ###
 
-POST http://localhost:3000/registro/
+POST http://localhost:3000/usuarios/registro/
 Content-Type: application/json
 
 {
-    "email": "antonio@gmail.com",
-    "password": "gato"
+    "email": "rosamari.sab@gmail.com",
+    "password": "1234"
 }
 
 ###
 
-POST http://localhost:3000/login/
+POST http://localhost:3000/usuarios/login/
 Content-Type: application/json
 
 {
-    "email": "pepe@gmail.com",
-    "password": "perro"
+    "email": "rosamari.sab@gmail.com",
+    "password": "1234"
+}
+###
+
+POST http://localhost:3000/usuarios/logout/
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNjAyMTc0NTExLCJleHAiOjE2MDIyNjA5MTF9.RY4L5PBkRBXOgJm67mghj5wRm4jViN5bOhuLNaWU7vA
+
+{
+    "email": "rosamari.sab@gmail.com",
+    "password": "1234"
+}
+###
+
+POST http://localhost:3000/usuarios/delete/
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNjAyMTc0NTQxLCJleHAiOjE2MDIyNjA5NDF9.jrLbxM0pEgrV-UpmUWDmNCLb5HnhhC2i8BRHlXQMfnE
+
+{
+    "email": "rosamari.sab@gmail.com"
 }

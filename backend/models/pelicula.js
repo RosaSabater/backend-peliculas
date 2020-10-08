@@ -14,9 +14,18 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Pelicula.init({
-    original_title: DataTypes.STRING,
-    description: DataTypes.TEXT,
-    backdrop_path: DataTypes.STRING,
+    original_title: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    backdrop_path: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     CategoryId: DataTypes.INTEGER
   }, {
     sequelize,
