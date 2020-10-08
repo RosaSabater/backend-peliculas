@@ -1,2 +1,2 @@
-# buscador-de-peliculas
-Buscador de películas con opción de alquiler creado con NodeJS, Express y Sequelize
+# Alquiler de películas
+Backend de alquiler de películas creado con NodeJS, Express, Sequelize, MySQL2 y JWT.
