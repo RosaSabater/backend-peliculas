@@ -1,5 +1,6 @@
 const express = require('express');
 const usuariosRouter = require('./routes/usuarios')
+const peliculasRouter = require('./routes/peliculas')
 const app = express();
 
 
@@ -15,6 +16,7 @@ app.use(express.json());
 
 
 app.use('/usuarios', usuariosRouter);
+app.use('/peliculas', peliculasRouter);
 
 
 app.listen(3000,()=>console.log('Servidor levantado en 3000'));

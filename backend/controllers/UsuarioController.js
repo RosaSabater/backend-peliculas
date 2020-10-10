@@ -41,7 +41,7 @@ const UsuarioController = {
             let email = body.email;
             let password = body.password;
     
-            // defino 'encontrado' cuando busque en la db por el email
+            // defino 'encontrado' cuando busque en la db por el email y password
             // y mete el resultado
             let encontrado = await Usuario.findOne({
     
@@ -70,14 +70,17 @@ const UsuarioController = {
                 
             }
             
-
+            // creo el token del jwt
             const token = jwt.sign({
 
+                // coge el id de la db del usuario encontrado anteriormente
                 id: encontrado.id
 
             }, 'geekshubs', {expiresIn: '1d'});
 
+            // el campo token del model de usuario se llena con el token generado
             encontrado.token = token;
+            // y lo guarda
             encontrado.save();
 
             res.send({encontrado})
@@ -101,15 +104,20 @@ const UsuarioController = {
 
         try {
 
+            // se define logoutUsuario con el usuario encontrado en db con el email
             let logoutUsuario = await Usuario.findOne({
                 
                 where : {
+
                     email
+
                 }
 
             });
 
+            // vacíamos el campo de token de usuario 
             logoutUsuario.token = null;
+            // y lo guardo
             logoutUsuario.save();
 
             res.send('Has cerrado sesión')
@@ -135,15 +143,19 @@ const UsuarioController = {
 
         try {
 
+            // se define borrar con el email y el token del usuario
             let borrar = await Usuario.findOne({
 
                 where: {
+
                     email,
                     token
+
                 }
 
             })
 
+            // y se borra
             await borrar.destroy();  
             res.send('La cuenta ha sido eliminada')
 
@@ -154,7 +166,25 @@ const UsuarioController = {
 
         }
 
-    }
+    },
+
+
+
+    // async perfil(req,res) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // },
 
 };
 

@@ -38,3 +38,17 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNjAyMTc0
 {
     "email": "rosamari.sab@gmail.com"
 }
+###
+
+POST http://localhost:3000/peliculas/add/
+Content-Type: application/json
+
+{
+    "original_title": "Enola Holmes",
+    "description": "Enola Holmes, una intrépida joven que busca a su madre, utiliza su brillante instinto investigador para superar a su hermano Sherlock y ayudar a un lord en su fuga.",
+    "backdrop_path": "/kMe4TKMDNXTKptQPAdOF0oZHq3V.jpg"
+}
+###
+
+GET http://localhost:3000/peliculas/
+Content-Type: application/json
