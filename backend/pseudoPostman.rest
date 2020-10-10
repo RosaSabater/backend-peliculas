@@ -44,11 +44,35 @@ POST http://localhost:3000/peliculas/add/
 Content-Type: application/json
 
 {
-    "original_title": "Enola Holmes",
-    "description": "Enola Holmes, una intrépida joven que busca a su madre, utiliza su brillante instinto investigador para superar a su hermano Sherlock y ayudar a un lord en su fuga.",
-    "backdrop_path": "/kMe4TKMDNXTKptQPAdOF0oZHq3V.jpg"
+    "original_title": "Mulán",
+    "description": "El emperador de China emite un decreto para reclutar a un varón por cada familia que deberá servir en el ejército imperial para defender al país de los invasores del norte. Hua Mulán, hija única de un condecorado guerrero, se presenta para evitar que su anciano padre sea llamado a filas. Se hace pasar por un hombre, Hua Jun y se somete a todo tipo de pruebas. Para conseguirlo deberá apelar a su fuerza interior y sacar a la luz todo su potencial. Se trata de una aventura épica que la transformará en una guerrera laureada que la hará merecedora del respeto de todo un país y motivo de orgullo para su padre.",
+    "backdrop_path": "/zzWGRw277MNoCs3zhyG3YmYQsXv.jpg"
 }
 ###
 
-GET http://localhost:3000/peliculas/
+POST http://localhost:3000/peliculas/alquilar/
 Content-Type: application/json
+
+{
+    "UsuarioId": 2,
+    "PeliculaId": 1
+}
+
+###
+
+POST http://localhost:3000/usuarios/registro/
+Content-Type: application/json
+
+{
+    "email": "pepe@gmail.com",
+    "password": "1234"
+}
+###
+
+POST http://localhost:3000/usuarios/perfil/
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjAyMzMzNDQzLCJleHAiOjE2MDI0MTk4NDN9.FEDpE3KMt_YN3xml7g0Z5tFzmDjV5kp5MLiaqOfD5VE
+
+{
+    "UsuarioId": 2
+}

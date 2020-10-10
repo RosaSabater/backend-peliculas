@@ -10,8 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.belongsTo(models.Usuario);
-      this.belongsToMany(models.Pelicula, {through:models.PedidoPelicula});
+      // this.belongsTo(models.Usuario);
     }
   };
   Pedido.init({
@@ -22,7 +21,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: false
     },
-    UserId: {
+    UsuarioId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    PeliculaId: {
       type: DataTypes.INTEGER,
       allowNull: false
     }

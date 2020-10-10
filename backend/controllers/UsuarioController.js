@@ -1,5 +1,6 @@
 // importo Usuario de models
 
+const {Pedido} = require ("../models");
 const {Usuario} = require ("../models");
 const jwt = require ('jsonwebtoken');
 
@@ -125,7 +126,7 @@ const UsuarioController = {
         } catch (error) {
             
             console.log(error)
-            return res.status(500).send();
+            res.status(500).send();
 
         }
 
@@ -162,7 +163,7 @@ const UsuarioController = {
         } catch (error) {
             
             console.log(error)
-            return res.status(500).send();
+            res.status(500).send();
 
         }
 
@@ -170,21 +171,33 @@ const UsuarioController = {
 
 
 
-    // async perfil(req,res) {
+    async perfil(req,res) {
 
+        let body = req.body;
 
+        try {
 
+            let buscar = await Pedido.findAll({
 
+                where: {
+    
+                    UsuarioId: body.UsuarioId
 
+                }
+    
+            })  
 
+            res.send(buscar)
+            
+        } catch (error) {
+            
+            console.log(error)
+            res.status(500).send();
 
+        }
 
-
-
-
-
-
-    // },
+    },
+    
 
 };
 
