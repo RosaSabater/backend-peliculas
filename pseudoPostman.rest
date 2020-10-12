@@ -1,8 +1,13 @@
-GET http://localhost:3000/
+# @url = http://localhost:3000
+@url = https://backendpeliculas.herokuapp.com
+###
+
+
+GET {{url}}/
 
 ###
 
-POST http://localhost:3000/usuarios/registro/
+POST {{url}}/usuarios/registro/
 Content-Type: application/json
 
 {
@@ -12,7 +17,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3000/usuarios/login/
+POST {{url}}/usuarios/login/
 Content-Type: application/json
 
 {
@@ -21,7 +26,7 @@ Content-Type: application/json
 }
 ###
 
-POST http://localhost:3000/usuarios/logout/
+POST {{url}}/usuarios/logout/
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNjAyMTc0NTExLCJleHAiOjE2MDIyNjA5MTF9.RY4L5PBkRBXOgJm67mghj5wRm4jViN5bOhuLNaWU7vA
 
@@ -31,7 +36,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNjAyMTc0
 }
 ###
 
-POST http://localhost:3000/usuarios/delete/
+POST {{url}}/usuarios/delete/
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNjAyMTc0NTQxLCJleHAiOjE2MDIyNjA5NDF9.jrLbxM0pEgrV-UpmUWDmNCLb5HnhhC2i8BRHlXQMfnE
 
@@ -40,7 +45,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNjAyMTc0
 }
 ###
 
-POST http://localhost:3000/peliculas/add/
+POST {{url}}/peliculas/add/
 Content-Type: application/json
 
 {
@@ -50,7 +55,7 @@ Content-Type: application/json
 }
 ###
 
-POST http://localhost:3000/peliculas/add/
+POST {{url}}/peliculas/add/
 Content-Type: application/json
 
 {
@@ -60,7 +65,7 @@ Content-Type: application/json
 }
 ###
 
-POST http://localhost:3000/peliculas/alquilar/
+POST {{url}}/peliculas/alquilar/
 Content-Type: application/json
 
 {
@@ -70,7 +75,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3000/usuarios/registro/
+POST {{url}}/usuarios/registro/
 Content-Type: application/json
 
 {
@@ -79,7 +84,7 @@ Content-Type: application/json
 }
 ###
 
-POST http://localhost:3000/usuarios/perfil/
+POST {{url}}/usuarios/perfil/
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjAyMzMzNDQzLCJleHAiOjE2MDI0MTk4NDN9.FEDpE3KMt_YN3xml7g0Z5tFzmDjV5kp5MLiaqOfD5VE
 
@@ -88,9 +93,9 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjAyMzMz
 }
 ###
 
-GET http://localhost:3000/peliculas/titulo/Enola/
+GET {{url}}/peliculas/titulo/Enola/
 
 ###
 
-GET http://localhost:3000/peliculas/2
+GET {{url}}/peliculas/2
 
