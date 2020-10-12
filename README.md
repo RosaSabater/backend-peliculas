@@ -32,6 +32,10 @@ Encontraremos un archivo llamado pseudoPostman.rest donde podremos ejecutarlos.
 
 <br>
 
+- **GET** /peliculas/
+
+<br>
+
 - **POST** /usuarios/registro/
 ```json
 {
