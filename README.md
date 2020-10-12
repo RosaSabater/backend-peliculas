@@ -19,10 +19,12 @@ Es mi primer backend de una tienda de alquiler de películas que usa:
 
 <br>
 
-# Deploy
+# Deploy ☁
 
 - El proyecto está deployado en [Heroku](https://backendpeliculas.herokuapp.com)
 - He usado el add-on de Heroku ClearDB MySQL para tener la base de datos en la nube.
+
+<br>
 
 # Endpoints 📃
 Se pueden ejecutar sin necesidad de Postman con la extensión REST Client.<br>
