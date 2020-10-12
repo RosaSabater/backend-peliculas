@@ -15,6 +15,7 @@ app.use(function(req, res, next) {
 app.use(express.json());
 
 
+app.get('/', (req,res)=>res.send('Bienvenido'));
 app.use('/usuarios', usuariosRouter);
 app.use('/peliculas', peliculasRouter);
 
