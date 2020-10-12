@@ -120,6 +120,7 @@ const PeliculasController = {
             res.status(500).send('Ha habido un problema buscando la pelicula')
 
         }
+        
     },
 
 }
