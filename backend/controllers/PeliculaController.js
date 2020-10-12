@@ -1,5 +1,6 @@
 const {Pelicula} = require ("../models");
 const {Pedido} = require ('../models')
+const { Op } = require("sequelize");
 
 
 const PeliculasController = {
@@ -75,9 +76,51 @@ const PeliculasController = {
 
     },
 
+    async buscarPorId (req, res) {
 
+        try {
 
+            let pelicula = await Pelicula.findByPk(req.params.id)
+            
+            res.send(pelicula)
 
+        } catch (error) {
+
+            console.error(error);
+            res.status(500).send('Ha habido un problema buscando la pelicula')
+
+        }
+
+    },
+
+    async buscarPorTitulo (req,res) {
+
+        try {
+            
+            let pelicula = await Pelicula.findAll({
+
+                where: {
+
+                    original_title: {
+
+                        // WHERE original_title like '%algoparecidoauntitulo%';
+                        [Op.like]: `%${req.params.titulo}%`
+
+                    }
+
+                }
+                
+            })
+
+            res.send(pelicula)
+
+        } catch (error) {
+
+            console.error(error);
+            res.status(500).send('Ha habido un problema buscando la pelicula')
+
+        }
+    },
 
 }
 

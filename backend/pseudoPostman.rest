@@ -76,3 +76,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjAyMzMz
 {
     "UsuarioId": 2
 }
+###
+
+GET http://localhost:3000/peliculas/titulo/Enola/
+
+###
+
+GET http://localhost:3000/peliculas/2
+
