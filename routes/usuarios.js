@@ -8,6 +8,6 @@ router.post('/registro', UsuarioController.registro);
 router.post('/login', UsuarioController.login);
 router.post('/logout', auth, UsuarioController.logout);
 router.post('/delete', auth, UsuarioController.delete);
-router.post('/perfil', auth, UsuarioController.perfil);
+router.get('/perfil', auth, UsuarioController.perfil);
 
 module.exports = router;

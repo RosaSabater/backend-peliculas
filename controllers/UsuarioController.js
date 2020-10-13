@@ -1,7 +1,6 @@
 // importo Usuario de models
 
-const {Pedido} = require ("../models");
-const {Usuario} = require ("../models");
+const {Usuario, Pedido, Pelicula} = require ("../models");
 const jwt = require ('jsonwebtoken');
 
 
@@ -173,21 +172,15 @@ const UsuarioController = {
 
     async perfil(req,res) {
 
-        let body = req.body;
-
         try {
 
-            let buscar = await Pedido.findAll({
+            let usuario = await Usuario.findbyPK(
 
-                where: {
+              req.usuario.id, {include: [{ model: Pedido }]}
     
-                    UsuarioId: body.UsuarioId
+            )  
 
-                }
-    
-            })  
-
-            res.send(buscar)
+            res.send(usuario)
             
         } catch (error) {
             

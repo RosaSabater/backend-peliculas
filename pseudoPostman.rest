@@ -3,8 +3,10 @@
 
 ###
 
-
 GET {{url}}/
+###
+
+GET {{url}}/peliculas
 
 ###
 
@@ -17,7 +19,7 @@ Content-Type: application/json
 }
 
 ###
-# @name token
+# @name resLogin
 POST {{url}}/usuarios/login/
 Content-Type: application/json
 
@@ -26,7 +28,7 @@ Content-Type: application/json
     "password": "1234"
 }
 ###
-@token = {{token.response.body.token}}
+@token = {{resLogin.response.body.encontrado.token}}
 
 POST {{url}}/usuarios/logout/
 Content-Type: application/json
@@ -61,17 +63,18 @@ POST {{url}}/peliculas/add/
 Content-Type: application/json
 
 {
-    "original_title": "Enola Holmes",
-    "description": "Enola Holmes, una intrépida joven que busca a su madre, utiliza su brillante instinto investigador para superar a su hermano Sherlock y ayudar a un lord en su fuga.",
-    "backdrop_path": "/kMe4TKMDNXTKptQPAdOF0oZHq3V.jpg"
+    "original_title": "PELICULA EJEMPLO",
+    "description": "Lorem ipsum",
+    "backdrop_path": "/kMe40oZHq3V.jpg"
 }
+
 ###
 
 POST {{url}}/peliculas/alquilar/
 Content-Type: application/json
 
 {
-    "UsuarioId": 2,
+    "UsuarioId": 41,
     "PeliculaId": 1
 }
 
@@ -86,18 +89,15 @@ Content-Type: application/json
 }
 ###
 
-POST {{url}}/usuarios/perfil/
-Content-Type: application/json
-Authorization: {{token}}
-
-{
-    "UsuarioId": 2
-}
-###
-
 GET {{url}}/peliculas/titulo/Enola/
 
 ###
 
 GET {{url}}/peliculas/2
+###
+
+GET {{url}}/usuarios/perfil
+Content-Type: application/json
+Authorization: {{token}}
+
 
