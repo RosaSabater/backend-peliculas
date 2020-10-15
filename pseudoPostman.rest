@@ -40,7 +40,7 @@ Authorization: {{token}}
 }
 ###
 
-POST {{url}}/usuarios/delete/
+DELETE {{url}}/usuarios/delete/
 Content-Type: application/json
 Authorization: {{token}}
 

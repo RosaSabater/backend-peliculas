@@ -174,7 +174,7 @@ const UsuarioController = {
 
         try {
 
-            let usuario = await Usuario.findByPK(
+            let usuario = await Usuario.findByPk(
 
               req.usuario.id, {include: [{ model: Pedido }]}
     
